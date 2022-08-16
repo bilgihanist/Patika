@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Patika Akbank Case</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+  <h2>Lütfen Sayıyı Giriniz...</h2>
+  <form>
+    <div class="form-group">
+      <label for="sayi">Sayi:</label>
+      <input type="sayi" class="form-control" id="sayi" placeholder="Lütfen Sadece Sayi giriniz..." name="sayi">
+    </div>
+    <div class="form-group">
+      <label for="sonuc">Toplam:</label>
+      <input type="sonuc" class="form-control" id="sonuc" placeholder="Toplam..." name="sonuc">
+    </div>
+
+
+    <button type="button" class="btn btn-default" id="hesapla">Hesapla</button>
+  </form>
+</div>
+
+<script>
+    var sayi=document.querySelector("#sayi");
+    var sonuc=document.querySelector("#sonuc");
+    var hesapla=document.querySelector("#hesapla");
+    
+    hesapla.onclick=function(){
+        var adet = 0,toplam=0;
+        var num=Number(sayi.value);
+        
+        console.log(num);
+        while(num != 0)
+        {
+           toplam=(num%10)+toplam;
+           num =Math.floor(num / 10);
+            ++adet;
+        }
+        sonuc.value=toplam;
+
+        if (toplam %2 ==0 ) {
+            window.alert("Even");
+        }
+        else 
+            window.alert("Odd");
+
+        
+    } 
+
+    
+    
+</script>
+
+</body>
+</html>
